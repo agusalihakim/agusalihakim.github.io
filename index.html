@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Personal portfolio of Agus Ali Hakim — Fullstack Developer" />
+  <title>[Your Name] — Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Compiled Tailwind CSS -->
+  <link rel="stylesheet" href="dist/output.css" />
+
+  <!-- Scroll-reveal animation -->
+  <style>
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    [data-reveal].revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal] { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+
+<body class="bg-bg text-ink font-body">
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════ -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-bg/90 backdrop-blur-sm border-b border-surface">
+    <nav class="max-w-content mx-auto px-6 h-14 flex items-center justify-between">
+      <!-- Logo / name -->
+      <a href="#hero" class="font-display font-bold text-sm tracking-tight hover:text-accent transition-colors">
+        YN<span class="text-accent">.</span>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="hidden md:flex items-center gap-8">
+        <li><a href="#about"      class="nav-link" data-section="about">About</a></li>
+        <li><a href="#skills"     class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#projects"   class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+        <li><a href="#contact"    class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+
+      <!-- Mobile hamburger -->
+      <button id="menu-btn" aria-label="Open menu" aria-expanded="false"
+              class="md:hidden flex flex-col gap-1.5 p-1">
+        <span class="block w-5 h-px bg-ink"></span>
+        <span class="block w-5 h-px bg-ink"></span>
+        <span class="block w-3.5 h-px bg-ink"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-surface bg-bg px-6 py-4">
+      <ul class="flex flex-col gap-4">
+        <li><a href="#about"      class="nav-link block" data-section="about">About</a></li>
+        <li><a href="#skills"     class="nav-link block" data-section="skills">Skills</a></li>
+        <li><a href="#projects"   class="nav-link block" data-section="projects">Projects</a></li>
+        <li><a href="#experience" class="nav-link block" data-section="experience">Experience</a></li>
+        <li><a href="#contact"    class="nav-link block" data-section="contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section id="hero" class="min-h-screen flex flex-col justify-center pt-14">
+    <div class="max-w-content mx-auto px-6 py-24">
+
+      <p class="section-label mb-8">Available for work</p>
+
+      <h1 class="font-display font-extrabold leading-[1.05] tracking-[-0.03em]
+                 text-[clamp(3rem,8vw,6.5rem)] mb-6">
+        Hi, I'm<br>
+        <span class="text-accent-word">Agus Ali Hakim</span>
+      </h1>
+
+      <p class="text-[clamp(1.1rem,2.5vw,1.35rem)] text-muted max-w-xl leading-relaxed mb-10">
+        A full-stack developer who builds clean, purposeful software.
+        I care about the details — from database schema to pixel-perfect UI.
+      </p>
+
+      <div class="flex flex-wrap gap-3">
+        <a href="#projects" class="btn-primary">
+          See my work
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2.5"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="#contact" class="btn-outline">Get in touch</a>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider max-w-content mx-auto px-6" />
+
+
+  <!-- ═══════════════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════════════ -->
+  <section id="about" class="py-24">
+    <div class="max-w-content mx-auto px-6">
+
+      <p class="section-label" data-reveal>About me</p>
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+
+        <div data-reveal>
+          <h2 class="section-heading">A bit about who I am</h2>
+          <p class="text-muted leading-relaxed mb-4">
+            I'm a developer based in [City], passionate about building software that
+            solves real problems. I enjoy working across the full stack — from
+            architecting APIs to crafting interfaces people actually enjoy using.
+          </p>
+          <p class="text-muted leading-relaxed">
+            When I'm not coding, you'll find me [your hobby / interest] or exploring
+            new tools and ideas that push the edges of what's possible.
+          </p>
+        </div>
+
+        <!-- Quick facts card -->
+        <div class="bg-surface rounded-2xl p-8 space-y-5" data-reveal>
+          <div>
+            <p class="text-xs font-semibold font-display tracking-widest uppercase text-muted mb-1">Based in</p>
+            <p class="font-medium">[Your City, Country]</p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold font-display tracking-widest uppercase text-muted mb-1">Focus</p>
+            <p class="font-medium">Full-Stack Development</p>
+          </div>
+          <div>
+            <p class="text-xs font-semibold font-display tracking-widest uppercase text-muted mb-1">Open to</p>
+            <p class="font-medium">Freelance &amp; Full-time roles</p>
+          </div>
+          <a href="assets/resume.pdf" target="_blank" class="btn-outline w-full justify-center mt-2">
+            Download CV
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="2.5"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider max-w-content mx-auto px-6" />
+
+
+  <!-- ═══════════════════════════════════════════
+       SKILLS
+  ═══════════════════════════════════════════ -->
+  <section id="skills" class="py-24">
+    <div class="max-w-content mx-auto px-6">
+
+      <p class="section-label" data-reveal>Skills</p>
+      <h2 class="section-heading" data-reveal>What I work with</h2>
+
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+        <!-- Skill group card -->
+        <div class="bg-surface rounded-2xl p-6" data-reveal>
+          <p class="font-display font-semibold text-sm mb-4">Frontend</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Tailwind CSS</span>
+          </div>
+        </div>
+
+        <div class="bg-surface rounded-2xl p-6" data-reveal>
+          <p class="font-display font-semibold text-sm mb-4">Backend</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag">.NET Core</span>
+            <span class="tag">C#</span>
+            <span class="tag">REST API</span>
+            <span class="tag">ASP.NET</span>
+          </div>
+        </div>
+
+        <div class="bg-surface rounded-2xl p-6" data-reveal>
+          <p class="font-display font-semibold text-sm mb-4">Database</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag">Oracle</span>
+            <span class="tag">SQL</span>
+            <span class="tag">PL/SQL</span>
+          </div>
+        </div>
+
+        <div class="bg-surface rounded-2xl p-6" data-reveal>
+          <p class="font-display font-semibold text-sm mb-4">Tools & Infra</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">IIS</span>
+            <span class="tag">VS Code</span>
+          </div>
+        </div>
+
+        <!-- Add more groups as needed -->
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider max-w-content mx-auto px-6" />
+
+
+  <!-- ═══════════════════════════════════════════
+       PROJECTS
+  ═══════════════════════════════════════════ -->
+  <section id="projects" class="py-24">
+    <div class="max-w-content mx-auto px-6">
+
+      <p class="section-label" data-reveal>Projects</p>
+      <h2 class="section-heading" data-reveal>Selected work</h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- Project card -->
+        <article class="border border-surface rounded-2xl p-7 flex flex-col gap-4 hover:border-ink/20 transition-colors" data-reveal>
+          <div class="flex items-start justify-between gap-4">
+            <h3 class="font-display font-bold text-lg leading-tight">Project Name</h3>
+            <a href="#" target="_blank" aria-label="View project"
+               class="shrink-0 text-muted hover:text-ink transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/>
+              </svg>
+            </a>
+          </div>
+          <p class="text-muted text-sm leading-relaxed flex-1">
+            Short description of what this project does and the problem it solves.
+            Keep it concise — one to two sentences.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag">.NET Core</span>
+            <span class="tag">Oracle</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </article>
+
+        <!-- Repeat for more projects -->
+        <article class="border border-surface rounded-2xl p-7 flex flex-col gap-4 hover:border-ink/20 transition-colors" data-reveal>
+          <div class="flex items-start justify-between gap-4">
+            <h3 class="font-display font-bold text-lg leading-tight">Another Project</h3>
+            <a href="#" target="_blank" aria-label="View project"
+               class="shrink-0 text-muted hover:text-ink transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                   fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/>
+              </svg>
+            </a>
+          </div>
+          <p class="text-muted text-sm leading-relaxed flex-1">
+            Short description of what this project does and the problem it solves.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag">HTML</span>
+            <span class="tag">Tailwind CSS</span>
+            <span class="tag">JS</span>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="mt-8 text-center" data-reveal>
+        <a href="https://github.com/yourusername" target="_blank" class="btn-outline">
+          View all on GitHub
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2.5"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider max-w-content mx-auto px-6" />
+
+
+  <!-- ═══════════════════════════════════════════
+       EXPERIENCE
+  ═══════════════════════════════════════════ -->
+  <section id="experience" class="py-24">
+    <div class="max-w-content mx-auto px-6">
+
+      <p class="section-label" data-reveal>Experience</p>
+      <h2 class="section-heading" data-reveal>Where I've worked</h2>
+
+      <div class="space-y-0">
+
+        <!-- Experience row -->
+        <div class="grid md:grid-cols-[180px_1fr] gap-4 md:gap-10 py-8 border-b border-surface" data-reveal>
+          <p class="text-sm text-muted font-body pt-0.5">2023 — Present</p>
+          <div>
+            <h3 class="font-display font-semibold text-base">Full-Stack Developer</h3>
+            <p class="text-muted text-sm mb-3">Company Name &middot; Jakarta, Indonesia</p>
+            <p class="text-sm text-muted leading-relaxed">
+              Brief description of responsibilities and impact. Focus on outcomes
+              rather than tasks — what did you ship, improve, or build?
+            </p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-[180px_1fr] gap-4 md:gap-10 py-8 border-b border-surface" data-reveal>
+          <p class="text-sm text-muted font-body pt-0.5">2021 — 2023</p>
+          <div>
+            <h3 class="font-display font-semibold text-base">Junior Developer</h3>
+            <p class="text-muted text-sm mb-3">Another Company &middot; Jakarta, Indonesia</p>
+            <p class="text-sm text-muted leading-relaxed">
+              Brief description of your role and contributions.
+            </p>
+          </div>
+        </div>
+
+        <!-- Add more rows as needed -->
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider max-w-content mx-auto px-6" />
+
+
+  <!-- ═══════════════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════════════ -->
+  <section id="contact" class="py-24">
+    <div class="max-w-content mx-auto px-6">
+
+      <p class="section-label" data-reveal>Contact</p>
+      <h2 class="section-heading" data-reveal>Let's work together</h2>
+      <p class="text-muted leading-relaxed max-w-md mb-12" data-reveal>
+        Have a project in mind, or just want to say hello?
+        Fill out the form below or reach me directly at
+        <a href="mailto:your@email.com" class="text-ink underline underline-offset-2 hover:text-accent transition-colors">
+          your@email.com
+        </a>.
+      </p>
+
+      <!-- Form — powered by Formspree (replace YOUR_FORM_ID) -->
+      <form id="contact-form" class="grid sm:grid-cols-2 gap-5 max-w-lg" data-reveal>
+
+        <div class="flex flex-col gap-1.5">
+          <label for="name" class="text-xs font-semibold font-display tracking-widest uppercase text-muted">Name</label>
+          <input id="name" name="name" type="text" required placeholder="Your name"
+                 class="bg-surface rounded-xl px-4 py-3 text-sm outline-none
+                        focus:ring-2 focus:ring-accent/40 placeholder:text-muted/50
+                        transition-shadow" />
+        </div>
+
+        <div class="flex flex-col gap-1.5">
+          <label for="email" class="text-xs font-semibold font-display tracking-widest uppercase text-muted">Email</label>
+          <input id="email" name="email" type="email" required placeholder="your@email.com"
+                 class="bg-surface rounded-xl px-4 py-3 text-sm outline-none
+                        focus:ring-2 focus:ring-accent/40 placeholder:text-muted/50
+                        transition-shadow" />
+        </div>
+
+        <div class="sm:col-span-2 flex flex-col gap-1.5">
+          <label for="message" class="text-xs font-semibold font-display tracking-widest uppercase text-muted">Message</label>
+          <textarea id="message" name="message" required rows="5" placeholder="Tell me about your project..."
+                    class="bg-surface rounded-xl px-4 py-3 text-sm outline-none resize-none
+                           focus:ring-2 focus:ring-accent/40 placeholder:text-muted/50
+                           transition-shadow"></textarea>
+        </div>
+
+        <div class="sm:col-span-2 flex items-center gap-4">
+          <button type="submit" class="btn-primary">Send message</button>
+          <p id="form-status" class="hidden text-sm"></p>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="border-t border-surface">
+    <div class="max-w-content mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-muted">
+        &copy; <span id="year"></span> [Your Name]. Built with HTML, Tailwind CSS & JS.
+      </p>
+      <div class="flex items-center gap-5">
+        <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub"
+           class="text-muted hover:text-ink transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+               fill="currentColor">
+            <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483
+                     0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466
+                     -.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832
+                     .092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688
+                     -.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1
+                     2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595
+                     1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012
+                     2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"/>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"
+           class="text-muted hover:text-ink transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+               fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136
+                     1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85
+                     3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065
+                     2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771
+                     C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227
+                     24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

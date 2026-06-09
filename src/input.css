@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bg text-ink font-body antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply text-xs font-display font-semibold tracking-[0.2em] uppercase text-muted mb-6;
+  }
+  .section-heading {
+    @apply font-display font-bold text-display-md text-ink mb-6;
+  }
+  .nav-link {
+    @apply text-sm font-body text-muted hover:text-ink transition-colors duration-200;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-accent text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-opacity-90 transition-all duration-200;
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border border-surface text-sm font-semibold px-5 py-2.5 rounded-full hover:border-ink transition-all duration-200;
+  }
+  .tag {
+    @apply text-xs font-body bg-surface text-ink px-3 py-1 rounded-full;
+  }
+  .divider {
+    @apply border-t border-surface my-0;
+  }
+}
+
+@layer utilities {
+  .text-accent-word {
+    color: #4A6CF7;
+  }
+}
