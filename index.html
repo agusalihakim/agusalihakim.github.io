@@ -280,26 +280,39 @@ and modern web technologies.
     <div class="grid md:grid-cols-2 gap-6">
 
   <!-- Project 1 -->
-  <article class="border border-surface rounded-2xl p-7 flex flex-col gap-4 hover:border-ink/20 transition-colors" data-reveal>
-    <div class="flex items-start justify-between gap-4">
+  <article
+    class="border border-surface rounded-2xl overflow-hidden flex flex-col hover:border-ink/20 transition-colors"
+    data-reveal
+    data-images='[
+      "assets/screenshots/giisgo-1.png",
+      "assets/screenshots/giisgo-2.png",
+      "assets/screenshots/giisgo-3.png",
+      "assets/screenshots/giisgo-4.png",
+      "assets/screenshots/giisgo-5.png",
+      "assets/screenshots/giisgo-6.png"
+    ]'
+  >
+    <!-- Carousel mount point -->
+    <div class="carousel-root w-full bg-surface"></div>
+
+    <!-- Card body -->
+    <div class="p-7 flex flex-col gap-4 flex-1">
       <h3 class="font-display font-bold text-lg leading-tight">
         Next-Generation Policy Processing System
       </h3>
-    </div>
-
-    <p class="text-muted text-sm leading-relaxed flex-1">
-      Developed a modern insurance policy processing platform that streamlines
-      policy creation, automates premium calculations, integrates with legacy
-      systems, and significantly reduces operational processing time. Designed
-      to be faster, mobile-responsive, and accessible from anywhere.
-    </p>
-
-    <div class="flex flex-wrap gap-2">
-      <span class="tag">.NET Core</span>
-      <span class="tag">C#</span>
-      <span class="tag">JavaScript</span>
-      <span class="tag">Oracle SQL</span>
-      <span class="tag">REST API</span>
+      <p class="text-muted text-sm leading-relaxed flex-1">
+        Developed a modern insurance policy processing platform that streamlines
+        policy creation, automates premium calculations, integrates with legacy
+        systems, and significantly reduces operational processing time. Designed
+        to be faster, mobile-responsive, and accessible from anywhere.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <span class="tag">.NET Core</span>
+        <span class="tag">C#</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Oracle SQL</span>
+        <span class="tag">REST API</span>
+      </div>
     </div>
   </article>
 
@@ -564,5 +577,6 @@ and modern web technologies.
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
   <script src="js/main.js"></script>
+  <script src="js/carousel.js"></script>
 </body>
 </html>
